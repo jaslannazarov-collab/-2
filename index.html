@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dota 2 - Мир героев</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101114;
+            color: #eeeeee;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #17191d,
+                #8b1e1e
+            );
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 19px;
+            color: #d6d6d6;
+        }
+
+        nav {
+            background: #181a1f;
+            padding: 18px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: #d94b4b;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            background: #1a1c21;
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 5px solid #c62828;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro h2 {
+            color: #e53935;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+            color: #d2d2d2;
+        }
+
+        .highlight {
+            color: #ff5a5a;
+            font-weight: bold;
+        }
+
+        .image-card {
+            background: #1a1c21;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-card img {
+            width: 100%;
+            max-width: 1000px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .image-card p {
+            margin-top: 15px;
+            color: #aaaaaa;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #1a1c21;
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 3px solid #c62828;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #e53935;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #c8c8c8;
+        }
+
+        .heroes {
+            background: linear-gradient(
+                135deg,
+                #1c1e23,
+                #251719
+            );
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .heroes h2 {
+            color: #e53935;
+            margin-bottom: 15px;
+        }
+
+        .heroes p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .heroes ul {
+            padding-left: 25px;
+        }
+
+        .heroes li {
+            margin-bottom: 8px;
+            color: #dddddd;
+        }
+
+        .quote {
+            text-align: center;
+            background: #0c0d0f;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .quote p {
+            font-size: 22px;
+            font-style: italic;
+            color: #eeeeee;
+        }
+
+        .quote span {
+            display: block;
+            margin-top: 10px;
+            color: #d94b4b;
+            font-size: 15px;
+        }
+
+        footer {
+            background: #0b0c0e;
+            color: #888888;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            border-top: 1px solid #292929;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+
+            .image-card img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Dota 2</h1>
+        <p>Мир героев, стратегий и великих сражений</p>
+    </header>
+
+    <nav>
+        <a href="#about">О игре</a>
+        <a href="#heroes">Герои</a>
+        <a href="#game">Особенности</a>
+    </nav>
+
+    <main>
+
+        <section class="intro" id="about">
+
+            <h2>Что такое Dota 2?</h2>
+
+            <p>
+                <span class="highlight">Dota 2</span> - это многопользовательская
+                командная компьютерная игра в жанре MOBA.
+                Игроки управляют героями и сражаются друг против друга
+                на большой карте.
+            </p>
+
+            <p>
+                Главная цель игры - уничтожить главное здание противника,
+                расположенное на его базе.
+                <br>
+                Для победы игрокам необходимо работать вместе,
+                развивать своих героев и правильно использовать способности.
+            </p>
+
+        </section>
+
+        <section class="image-card">
+
+            <img
+                src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/antimage/full.png"
+                alt="Герой Dota 2"
+            >
+
+            <p>
+                Один из героев вселенной Dota 2.
+            </p>
+
+        </section>
+
+        <section class="cards" id="game">
+
+            <div class="card">
+                <h3>Командная игра</h3>
+
+                <p>
+                    В стандартном матче две команды по пять игроков
+                    сражаются друг против друга.
+                    Каждый участник выполняет определённую роль.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Герои</h3>
+
+                <p>
+                    В Dota 2 существует большое количество героев.
+                    Каждый герой обладает уникальными способностями,
+                    характеристиками и стилем игры.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Стратегия</h3>
+
+                <p>
+                    Успех зависит не только от реакции игрока,
+                    но и от выбора предметов, тактики,
+                    командного взаимодействия и принятия решений.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="heroes" id="heroes">
+
+            <h2>Популярные герои</h2>
+
+            <p>
+                Каждый герой имеет свои сильные и слабые стороны.
+                Некоторые персонажи хорошо подходят для атаки,
+                другие помогают команде или защищают союзников.
+            </p>
+
+            <ul>
+                <li><strong>Invoker</strong> - герой с большим количеством способностей.</li>
+                <li><strong>Pudge</strong> - известный герой с крюком Meat Hook.</li>
+                <li><strong>Juggernaut</strong> - быстрый боец ближнего боя.</li>
+                <li><strong>Crystal Maiden</strong> - герой поддержки с мощными заклинаниями.</li>
+                <li><strong>Phantom Assassin</strong> - опасный герой, способный наносить большой урон.</li>
+            </ul>
+
+        </section>
+
+        <section class="quote">
+
+            <p>
+                «Победа начинается с правильной стратегии».
+            </p>
+
+            <span>Dota 2</span>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 Dota 2 Fan Page</p>
+        <p>Учебный проект по HTML</p>
+
+    </footer>
+
+</body>
+</html>
